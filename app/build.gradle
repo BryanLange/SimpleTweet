@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         applicationId "com.codepath.apps.restclienttemplate"
-        minSdkVersion 17
+        minSdkVersion 28
         targetSdkVersion 28
 
         // Room schemas
@@ -30,6 +30,10 @@ android {
     }
 }
 
+ext {
+    supportLibVersion = '27.1.1'  // variable that can be referenced to keep support libs consistent
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     implementation 'com.codepath.libraries:android-oauth-handler:1.4.0'
@@ -48,4 +52,12 @@ dependencies {
 
     // swipe to refresh
     implementation 'com.android.support:support-v4:28.0.0'
+
+    // Parceler
+    implementation 'org.parceler:parceler-api:1.1.12'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+
+    // Design Support Library
+    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
+    implementation "com.android.support:design:28.0.0"
 }
